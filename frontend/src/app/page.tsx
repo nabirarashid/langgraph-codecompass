@@ -55,7 +55,7 @@ const DevToolsApp = () => {
     } catch (error) {
       console.error("Search error:", error);
       setError(
-        "Search failed. Please make sure the backend server is running on port 8000."
+        "Search failed. Please check if the backend service is running properly."
       );
       setSearchStage("");
     } finally {
