@@ -1,13 +1,13 @@
 "use client";
 
 import React, { useState, useRef, useEffect } from "react";
-import Header from "@/app/components/layout/Header";
-import Footer from "@/app/components/layout/Footer";
-import AnimatedBackground from "@/app/components/layout/AnimatedBackground";
-import SearchSection from "@/app/components/search/SearchSection";
-import ResultsSection from "@/app/components/results/ResultsSection";
-import { Results } from "@/app/components/shared/types";
-import { API_BASE_URL } from "@/app/components/shared/constants";
+import Header from "./components/layout/Header";
+import Footer from "./components/layout/Footer";
+import AnimatedBackground from "./components/layout/AnimatedBackground";
+import SearchSection from "./components/search/SearchSection";
+import ResultsSection from "./components/results/ResultsSection";
+import { Results } from "./components/shared/types";
+import { API_BASE_URL } from "./components/shared/constants";
 
 const DevToolsApp = () => {
   const [query, setQuery] = useState("");
@@ -55,7 +55,7 @@ const DevToolsApp = () => {
     } catch (error) {
       console.error("Search error:", error);
       setError(
-        "Search failed. There might be a connection issue with the backend service."
+        "Search failed. Please make sure the backend server is running on port 8000."
       );
       setSearchStage("");
     } finally {
@@ -96,9 +96,9 @@ const DevToolsApp = () => {
           />
 
           {results && (
-            <ResultsSection
-              results={results}
-              formatRecommendation={formatRecommendation}
+            <ResultsSection 
+              results={results} 
+              formatRecommendation={formatRecommendation} 
             />
           )}
         </main>

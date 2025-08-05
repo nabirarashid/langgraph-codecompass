@@ -7,7 +7,7 @@ interface SearchInputProps {
   onSearch: () => void;
   isSearching: boolean;
   onKeyPress: (e: React.KeyboardEvent<HTMLTextAreaElement>) => void;
-  textareaRef: RefObject<HTMLTextAreaElement>;
+  textareaRef: RefObject<HTMLTextAreaElement | null>;
 }
 
 export default function SearchInput({
