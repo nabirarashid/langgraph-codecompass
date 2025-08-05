@@ -7,9 +7,8 @@ import {
   Shield,
 } from "lucide-react";
 
-export const API_BASE_URL = process.env.NODE_ENV === 'production' 
-  ? "https://langgraph-agent-production-90ab.up.railway.app"
-  : "http://localhost:8000";
+export const API_BASE_URL =
+  "https://langgraph-agent-production-90ab.up.railway.app";
 
 export const suggestedQueries = [
   { text: "Google Cloud alternatives", icon: Cloud },
