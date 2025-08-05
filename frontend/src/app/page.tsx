@@ -55,7 +55,7 @@ const DevToolsApp = () => {
     } catch (error) {
       console.error("Search error:", error);
       setError(
-        "Search failed. Please check if the backend service is running properly."
+        "Search failed. There might be a connection issue with the backend service."
       );
       setSearchStage("");
     } finally {

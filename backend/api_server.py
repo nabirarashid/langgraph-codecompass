@@ -12,7 +12,11 @@ app = FastAPI(title="DevTools Research API", version="1.0.0")
 # Configure CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://*.vercel.app", "http://localhost:3000", "https://your-actual-vercel-url.vercel.app"],
+    allow_origins=[
+        "https://codecompass-rho.vercel.app",
+        "http://localhost:3000",
+        "https://localhost:3000"
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
