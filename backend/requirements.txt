@@ -3,3 +3,5 @@ langgraph
 python-dotenv
 firecrawl-py
 pydantic
+fastapi
+uvicorn[standard]
