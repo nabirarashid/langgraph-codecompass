@@ -8,7 +8,7 @@ import {
 } from "lucide-react";
 
 export const API_BASE_URL = process.env.NODE_ENV === 'production' 
-  ? process.env.NEXT_PUBLIC_API_URL || "https://your-backend-url.railway.app"
+  ? "https://langgraph-agent-production-90ab.up.railway.app"
   : "http://localhost:8000";
 
 export const suggestedQueries = [
