@@ -11,7 +11,7 @@ const Header = () => {
               </div>
               <div>
                 <h1 className="text-2xl font-bold text-white">
-                  DevTools Research
+                  CodeCompass
                 </h1>
                 <p className="text-purple-300 text-sm">
                   AI-powered developer tool discovery
