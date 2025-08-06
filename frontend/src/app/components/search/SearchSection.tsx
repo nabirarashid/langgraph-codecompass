@@ -9,7 +9,7 @@ interface SearchSectionProps {
   onSearch: () => void;
   isSearching: boolean;
   onKeyPress: (e: React.KeyboardEvent<HTMLTextAreaElement>) => void;
-  textareaRef: React.RefObject<HTMLTextAreaElement | null>;
+  textareaRef: React.RefObject<HTMLTextAreaElement>;
   error: string | null;
   searchStage: string;
   results: Results | null;

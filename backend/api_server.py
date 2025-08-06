@@ -7,16 +7,12 @@ import os
 from src.workflow import Workflow
 
 
-app = FastAPI(title="DevTools Research API", version="1.0.0")
+app = FastAPI(title="Tech Stack Recommender API", version="1.0.0")
 
 # Configure CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "https://codecompass-rho.vercel.app",
-        "http://localhost:3000",
-        "https://localhost:3000"
-    ],
+    allow_origins=["*"],  # Allow all origins for deployment
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -30,25 +26,40 @@ class SearchRequest(BaseModel):
     query: str
 
 
-class Tool(BaseModel):
+class TechComponent(BaseModel):
     name: str
-    website: str
-    pricing: str
-    openSource: bool
-    apiAvailable: bool
+    category: str
     description: str
-    techStack: List[str]
-    features: List[str]
+    pros: List[str]
+    cons: List[str]
+    learningCurve: str
+    popularity: str
+    cost: str
+    useCases: List[str]
+
+
+class TechStackResponse(BaseModel):
+    name: str
+    description: str
+    components: List[TechComponent]
+    complexity: str
+    timeToMarket: str
+    scalability: str
+    costEstimate: str
+    teamSizeFit: str
+    bestFor: List[str]
+    industries: List[str]
+    learningResources: List[str]
 
 
 class SearchResponse(BaseModel):
-    tools: List[Tool]
-    recommendation: str
+    stacks: List[TechStackResponse]
+    analysis: str
 
 
 @app.post("/api/search", response_model=SearchResponse)
-async def search_tools(request: SearchRequest):
-    """Search for developer tools based on query"""
+async def search_stacks(request: SearchRequest):
+    """Get tech stack recommendations based on project description"""
     try:
         if not request.query.strip():
             raise HTTPException(status_code=400, detail="Query cannot be empty")
@@ -57,23 +68,41 @@ async def search_tools(request: SearchRequest):
         result = workflow.run(request.query)
         
         # Transform backend data to frontend format
-        tools = []
-        for company in result.companies:
-            tool = Tool(
-                name=company.name,
-                website=company.website,
-                pricing=company.pricing_model or "Unknown",
-                openSource=company.is_open_source or False,
-                apiAvailable=company.api_available or False,
-                description=company.description or "",
-                techStack=company.tech_stack or [],
-                features=company.integration_capabilities or []
+        stacks = []
+        for stack in result.recommended_stacks:
+            components = []
+            for comp in stack.components:
+                component = TechComponent(
+                    name=comp.name,
+                    category=comp.category,
+                    description=comp.description,
+                    pros=comp.pros,
+                    cons=comp.cons,
+                    learningCurve=comp.learning_curve,
+                    popularity=comp.popularity,
+                    cost=comp.cost,
+                    useCases=comp.use_cases
+                )
+                components.append(component)
+            
+            stack_response = TechStackResponse(
+                name=stack.name,
+                description=stack.description,
+                components=components,
+                complexity=stack.complexity,
+                timeToMarket=stack.time_to_market,
+                scalability=stack.scalability,
+                costEstimate=stack.cost_estimate,
+                teamSizeFit=stack.team_size_fit,
+                bestFor=stack.best_for,
+                industries=stack.industries,
+                learningResources=stack.learning_resources
             )
-            tools.append(tool)
+            stacks.append(stack_response)
         
         response = SearchResponse(
-            tools=tools,
-            recommendation=result.analysis or "No specific recommendation available."
+            stacks=stacks,
+            analysis=result.analysis or "Tech stack recommendations generated successfully."
         )
         
         return response
@@ -85,7 +114,7 @@ async def search_tools(request: SearchRequest):
 @app.get("/api/health")
 async def health_check():
     """Health check endpoint"""
-    return {"status": "healthy", "message": "DevTools Research API is running"}
+    return {"status": "healthy", "message": "Tech Stack Recommender API is running"}
 
 
 if __name__ == "__main__":
