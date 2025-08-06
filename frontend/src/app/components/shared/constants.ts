@@ -1,20 +1,20 @@
 import {
-  Cloud,
-  Code,
-  Database,
-  GitBranch,
-  Monitor,
-  Shield,
+  Globe,
+  Smartphone,
+  BarChart3,
+  ShoppingCart,
+  Brain,
+  Gamepad2,
 } from "lucide-react";
 
 export const API_BASE_URL =
   "https://langgraph-agent-production-90ab.up.railway.app";
 
 export const suggestedQueries = [
-  { text: "Google Cloud alternatives", icon: Cloud },
-  { text: "JavaScript frameworks", icon: Code },
-  { text: "Database solutions", icon: Database },
-  { text: "CI/CD tools", icon: GitBranch },
-  { text: "Monitoring platforms", icon: Monitor },
-  { text: "Authentication services", icon: Shield },
+  { text: "E-commerce website for small business", icon: ShoppingCart },
+  { text: "Mobile app for fitness tracking", icon: Smartphone },
+  { text: "Analytics dashboard for startup", icon: BarChart3 },
+  { text: "Portfolio website for freelancer", icon: Globe },
+  { text: "AI-powered chat application", icon: Brain },
+  { text: "Simple 2D puzzle game", icon: Gamepad2 },
 ];

@@ -15,9 +15,9 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "DevTools Research - AI-Powered Developer Tool Discovery",
+  title: "CodeCompass - AI-Powered Tech Stack Recommendations",
   description:
-    "Discover the best developer tools with AI-powered recommendations, pricing comparisons, and detailed analysis.",
+    "Get personalized tech stack recommendations with detailed analysis, cost estimates, and learning resources for your next project.",
 };
 
 export default function RootLayout({

@@ -25,7 +25,7 @@ export default function SearchInput({
         value={query}
         onChange={(e) => setQuery(e.target.value)}
         onKeyPress={onKeyPress}
-        placeholder="Search for developer tools... (e.g., 'cloud platforms', 'JavaScript frameworks', 'database solutions')"
+        placeholder="Describe your project... (e.g., 'e-commerce website for small business', 'mobile app for fitness tracking', 'data dashboard for analytics')"
         className="w-full p-6 pr-16 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl text-white placeholder-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent resize-none min-h-[80px] text-lg"
         rows={1}
       />

@@ -30,14 +30,14 @@ export default function SearchSection({
     <div className="max-w-4xl mx-auto mb-12">
       <div className="text-center mb-8">
         <h2 className="text-4xl md:text-5xl py-6 font-bold text-white mb-4">
-          Discover Dev Tools with{" "}
+          Get Tech Stack Recommendations with{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400">
             CodeCompass
           </span>
         </h2>
         <p className="text-xl text-purple-200 max-w-2xl mx-auto">
-          Get intelligent recommendations, pricing comparisons, and detailed
-          analysis for any developer tool or platform.
+          Describe your project and get personalized tech stack recommendations
+          with detailed analysis, cost estimates, and learning resources.
         </p>
       </div>
 

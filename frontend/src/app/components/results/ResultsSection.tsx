@@ -1,22 +1,22 @@
 import { Results } from "../shared/types";
-import ToolsGrid from "./ToolsGrid";
-import RecommendationCard from "./RecommendationCard";
+import AnalysisCard from "./AnalysisCard";
+import StacksGrid from "./StacksGrid";
 
 interface ResultsSectionProps {
   results: Results;
-  formatRecommendation: (text: string) => string;
+  formatAnalysis: (text: string) => string;
 }
 
 export default function ResultsSection({
   results,
-  formatRecommendation,
+  formatAnalysis,
 }: ResultsSectionProps) {
   return (
     <div className="max-w-6xl mx-auto">
-      <ToolsGrid tools={results.tools} />
-      <RecommendationCard
-        recommendation={results.recommendation}
-        formatRecommendation={formatRecommendation}
+      <StacksGrid stacks={results.stacks} />
+      <AnalysisCard
+        analysis={results.analysis}
+        formatAnalysis={formatAnalysis}
       />
     </div>
   );

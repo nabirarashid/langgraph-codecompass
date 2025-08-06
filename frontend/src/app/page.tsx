@@ -9,7 +9,7 @@ import ResultsSection from "@/app/components/results/ResultsSection";
 import { Results } from "@/app/components/shared/types";
 import { API_BASE_URL } from "@/app/components/shared/constants";
 
-const DevToolsApp = () => {
+const TechStackApp = () => {
   const [query, setQuery] = useState("");
   const [isSearching, setIsSearching] = useState(false);
   const [results, setResults] = useState<Results | null>(null);
@@ -35,7 +35,7 @@ const DevToolsApp = () => {
 
     try {
       // Show real-time progress
-      setSearchStage("Searching for developer tools...");
+      setSearchStage("Analyzing project requirements...");
 
       const response = await fetch(`${API_BASE_URL}/api/search`, {
         method: "POST",
@@ -71,7 +71,7 @@ const DevToolsApp = () => {
   };
 
   // Helper function to convert markdown bold to HTML
-  const formatRecommendation = (text: string) => {
+  const formatAnalysis = (text: string) => {
     return text.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
   };
 
@@ -96,10 +96,7 @@ const DevToolsApp = () => {
           />
 
           {results && (
-            <ResultsSection
-              results={results}
-              formatRecommendation={formatRecommendation}
-            />
+            <ResultsSection results={results} formatAnalysis={formatAnalysis} />
           )}
         </main>
 
@@ -109,4 +106,4 @@ const DevToolsApp = () => {
   );
 };
 
-export default DevToolsApp;
+export default TechStackApp;

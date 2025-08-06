@@ -1,15 +1,30 @@
-export type Tool = {
+export type TechComponent = {
   name: string;
-  website: string;
-  pricing: string;
-  openSource: boolean;
-  apiAvailable: boolean;
+  category: string;
   description: string;
-  techStack: string[];
-  features: string[];
+  pros: string[];
+  cons: string[];
+  learningCurve: string;
+  popularity: string;
+  cost: string;
+  useCases: string[];
+};
+
+export type TechStack = {
+  name: string;
+  description: string;
+  components: TechComponent[];
+  complexity: string;
+  timeToMarket: string;
+  scalability: string;
+  costEstimate: string;
+  teamSizeFit: string;
+  bestFor: string[];
+  industries: string[];
+  learningResources: string[];
 };
 
 export type Results = {
-  tools: Tool[];
-  recommendation: string;
+  stacks: TechStack[];
+  analysis: string;
 };
