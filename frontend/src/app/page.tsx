@@ -15,7 +15,7 @@ const TechStackApp = () => {
   const [results, setResults] = useState<Results | null>(null);
   const [searchStage, setSearchStage] = useState("");
   const [error, setError] = useState<string | null>(null);
-  const textareaRef = useRef<HTMLTextAreaElement>(null);
+  const textareaRef = useRef<HTMLTextAreaElement>(null!);
 
   // Auto-resize textarea
   useEffect(() => {
