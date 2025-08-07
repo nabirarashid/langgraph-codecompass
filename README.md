@@ -4,9 +4,6 @@
 
 ![codecompass demo](https://img.shields.io/badge/Status-Live-green) ![Next.js](https://img.shields.io/badge/Next.js-15+-black) ![Python](https://img.shields.io/badge/Python-3.11+-blue) ![FastAPI](https://img.shields.io/badge/FastAPI-Latest-teal)
 
-🌐 **live demo**: [codecompass.vercel.app](https://codecompass-rho.vercel.app)  
-🚀 **api**: [railway backend](https://langgraph-agent-production-90ab.up.railway.app)
-
 ---
 
 ## ✨ what codecompass does
