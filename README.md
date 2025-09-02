@@ -298,6 +298,7 @@ this project is licensed under the mit license - see the [LICENSE](LICENSE) file
 ---
 
 ## 🏛️ athena award submission notes
+[![Athena Award Badge](https://img.shields.io/endpoint?url=https%3A%2F%2Faward.athena.hackclub.com%2Fapi%2Fbadge)](https://award.athena.hackclub.com?utm_source=readme)
 
 to make hour tracking clearer: hackatime currently doesn’t support merging, so my tracked time for this project is split across two project names in the hackatime ui:
 
