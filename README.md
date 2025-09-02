@@ -297,11 +297,19 @@ this project is licensed under the mit license - see the [LICENSE](LICENSE) file
 
 ---
 
-## 📞 support
+## 🏛️ athena award submission notes
 
-- 🐛 **bug reports**: [github issues](https://github.com/nabirarashid/langgraph-agent/issues)
-- 💬 **questions**: [github discussions](https://github.com/nabirarashid/langgraph-agent/discussions)
-- 📧 **contact**: [your email]
+to make hour tracking clearer: hackatime currently doesn’t support merging, so my tracked time for this project is split across two project names in the hackatime ui:
+
+- `langgraph-agent`  
+- `ai-dev-assistant`  
+
+both of these map to the same repo and deployed project:  
+
+- **repo:** [github.com/nabirarashid/langgraph-codecompass](https://github.com/nabirarashid/langgraph-codecompass)  
+- **live demo:** [codecompass-rho.vercel.app](https://codecompass-rho.vercel.app)  
+
+please merge these for my athena award consideration 🙏 
 
 ---
 
