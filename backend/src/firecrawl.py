@@ -1,7 +1,8 @@
 # firecrawl.py
 
 import os
-from firecrawl import FirecrawlApp, ScrapeOptions
+from firecrawl import FirecrawlApp
+from firecrawl.types import ScrapeOptions
 from dotenv import load_dotenv
 
 load_dotenv()
